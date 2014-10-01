@@ -13,8 +13,8 @@ If the authentication was successful, password reset fields and any invalid auth
 
 Param        | Required | Default | Type  | Description
 ------------ | -------- | ------- | ----- | -----------------------------------
-$credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.  
-数组内必须包含用户凭证，例如 `email` 和 `password`。
+$credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.
+|||| 数组内必须包含用户凭证，例如 `email` 和 `password`。
 $remember    | false    | false   | bool  | Flag to wether Sentry should remember the user. It sets a Cookie.
 
 #### Example
