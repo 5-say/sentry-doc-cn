@@ -91,7 +91,8 @@ Cartalyst\Sentry\Throttling\UserBannedException    | When the provided user is b
 
 ### Sentry::authenticateAndRemember()
 
-Authenticates and Remembers a user based on credentials. This is an helper function for the `authenticate()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.
+Authenticates and Remembers a user based on credentials. This is an helper function for the `authenticate()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.  
+基于凭证认证并记住用户。这是 `authenticate()` 的辅助方法，将其 `$remember` 参数标记为 true ，因此用户将被记住（使用一个 cookie）。你可以用它实现在网站上看到的“记住我”的功能。
 
 #### Example
 
