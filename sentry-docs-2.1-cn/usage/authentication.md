@@ -11,7 +11,7 @@ Authenticates a user based on the provided credentials.
 If the authentication was successful, password reset fields and any invalid authentication attempts will be cleared.  
 如果认证成功，“密码重置字段”和任何“无效认证尝试”将被清空。
 
-Param        | Required | Default | Type  | Description
+Param 参数 | Required 是否必须 | Default 默认 | Type 类型 | Description 描述
 ------------ | -------- | ------- | ----- | -----------------------------------
 $credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.
  |||| 数组内必须包含用户凭证，例如 `email` 和 `password`。
@@ -24,49 +24,60 @@ $remember    | false    | false   | bool  | Flag to wether Sentry should remembe
 try
 {
 	// Login credentials
+	// 登录凭证
 	$credentials = array(
 		'email'    => 'john.doe@example.com',
 		'password' => 'password',
 	);
 
 	// Authenticate the user
+	// 认证用户
 	$user = Sentry::authenticate($credentials, false);
 }
 catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 {
+	// 登录字段必填
 	echo 'Login field is required.';
 }
 catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
 {
+	// 密码必填
 	echo 'Password field is required.';
 }
 catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
 {
+	// 密码错误
 	echo 'Wrong password, try again.';
 }
 catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 {
+	// 用户未注册
 	echo 'User was not found.';
 }
 catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 {
+	// 用户未激活
 	echo 'User is not activated.';
 }
 
 // The following is only required if the throttling is enabled
+// 仅当 throttling（限制） 开启时才需要以下内容
 catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
 {
+	// 用户已被暂停使用
 	echo 'User is suspended.';
 }
 catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
 {
+	// 用户已被禁用
 	echo 'User is banned.';
 }
 ```
 
-#### Exceptions
+#### Exceptions 异常
 
-In this section, we provide a list of all exceptions that are thrown by Sentry.
+In this section, we provide a list of all exceptions that are thrown by Sentry.  
+在本节中，我们将提供 Sentry 抛出的所有异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
