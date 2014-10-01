@@ -1,12 +1,15 @@
-## Authentication
+## Authentication 认证
 
-In this section, we will cover authentication and login.
+In this section, we will cover authentication and login.  
+在本节中，我们将介绍认证和登录。
 
 ### Sentry::authenticate()
 
-Authenticates a user based on the provided credentials.
+Authenticates a user based on the provided credentials.  
+基于凭证认证一个用户。
 
-If the authentication was successful, password reset fields and any invalid authentication attempts will be cleared.
+If the authentication was successful, password reset fields and any invalid authentication attempts will be cleared.  
+如果认证成功，“密码重置字段”和“任何无效认证尝试”将被清空。
 
 Param        | Required | Default | Type  | Description
 ------------ | -------- | ------- | ----- | -----------------------------------
