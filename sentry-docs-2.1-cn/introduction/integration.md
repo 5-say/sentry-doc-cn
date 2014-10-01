@@ -1,8 +1,7 @@
-# Integration
-# 安装
+# Integration 安装
 
-> **Note:** The database schema is located under `vendor/cartalyst/sentry/schema/mysql.sql`
-> **Note:** 数据库架构位于 `vendor/cartalyst/sentry/schema/mysql.sql` 文件下
+> **Note:** The database schema is located under `vendor/cartalyst/sentry/schema/mysql.sql`  
+> **Note:** 数据库架构位于 `vendor/cartalyst/sentry/schema/mysql.sql` 文件中
 
 ## Laravel 4
 
