@@ -9,11 +9,12 @@ Authenticates a user based on the provided credentials.
 基于凭证认证一个用户。
 
 If the authentication was successful, password reset fields and any invalid authentication attempts will be cleared.  
-如果认证成功，“密码重置字段”和“任何无效认证尝试”将被清空。
+如果认证成功，“密码重置字段”和任何“无效认证尝试”将被清空。
 
 Param        | Required | Default | Type  | Description
 ------------ | -------- | ------- | ----- | -----------------------------------
-$credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.
+$credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.  
+数组内必须包含用户凭证，例如 `email` 和 `password`。
 $remember    | false    | false   | bool  | Flag to wether Sentry should remember the user. It sets a Cookie.
 
 #### Example
