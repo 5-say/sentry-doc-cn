@@ -11,12 +11,12 @@ Authenticates a user based on the provided credentials.
 If the authentication was successful, password reset fields and any invalid authentication attempts will be cleared.  
 如果认证成功，“密码重置字段”和任何“无效认证尝试”将被清空。
 
-Param 参数 | Required 是否必须 | Default 默认 | Type 类型 | Description 描述
+Param        | Required | Default | Type  | Description
 ------------ | -------- | ------- | ----- | -----------------------------------
 $credentials | true     | null    | array | Array that should contain the user credentials like `email` and `password`.
- |||| 数组内必须包含用户凭证，例如 `email` 和 `password`。
+             |          |         |       | 数组内必须包含用户凭证，例如 `email` 和 `password`。
 $remember    | false    | false   | bool  | Flag to wether Sentry should remember the user. It sets a Cookie.
- |||| 它将设置一个 Cookie，用来标记 Sentry 是否应该记住这个用户。
+             |          |         |       | 它将设置一个 Cookie，用来标记 Sentry 是否应该记住这个用户。
 
 #### Example
 
@@ -36,27 +36,22 @@ try
 }
 catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 {
-	// 登录字段必填
 	echo 'Login field is required.';
 }
 catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
 {
-	// 密码必填
 	echo 'Password field is required.';
 }
 catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
 {
-	// 密码错误
 	echo 'Wrong password, try again.';
 }
 catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 {
-	// 用户未注册
 	echo 'User was not found.';
 }
 catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 {
-	// 用户未激活
 	echo 'User is not activated.';
 }
 
@@ -64,12 +59,10 @@ catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 // 仅当 throttling（限制） 开启时才需要以下内容
 catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
 {
-	// 用户已被暂停使用
 	echo 'User is suspended.';
 }
 catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
 {
-	// 用户已被禁用
 	echo 'User is banned.';
 }
 ```
@@ -82,12 +75,19 @@ In this section, we provide a list of all exceptions that are thrown by Sentry.
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\LoginRequiredException      | When you don't provide the required `login` field, this exception will be thrown.
+                                                   | 当你没有提供必须的 `login` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\PasswordRequiredException   | When you don't provide the `password` field, this exception will be thrown.
+                                                   | 当你没有提供 `password` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotActivatedException   | When the provided user is not activated, this exception will be thrown.
+                                                   | 当提供的用户未被激活时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotFoundException       | If the provided user was not found, this exception will be thrown.
+                                                   | 当提供的用户没有找到时，这个异常将被抛出。
 Cartalyst\Sentry\Users\WrongPasswordException      | When the provided password is incorrect, this exception will be thrown.
+                                                   | 当提供的密码错误时，这个异常将被抛出。
 Cartalyst\Sentry\Throttling\UserSuspendedException | When the provided user is suspended, this exception will be thrown.
+                                                   | 当提供的用户被暂停使用时，这个异常将被抛出。
 Cartalyst\Sentry\Throttling\UserBannedException    | When the provided user is banned, this exception will be thrown.
+                                                   | 当提供的用户被禁用时，这个异常将被抛出。
 
 ### Sentry::authenticateAndRemember()
 
