@@ -14,25 +14,29 @@ Sentry 捆绑了可选的 Service Provider 和 Facade 支持，使 Laravel 4 的
 After installing the package, open your Laravel config file `app/config/app.php` and add the following lines.  
 安装这个资源包后，打开你 Laravel 的 config 文件 `app/config/app.php` 添加以下几行。
 
-In the `$providers` array add the following service provider for this package.
+In the `$providers` array add the following service provider for this package.  
+在 `$providers` 数组内为这个资源包添加下面的 service provider。
 
 	'Cartalyst\Sentry\SentryServiceProvider',
 
-In the `$aliases` array add the following facade for this package.
+In the `$aliases` array add the following facade for this package.  
+在 `$aliases` 数组内为这个资源包添加下面的  facade。
 
 	'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 
-### Migrations
+### Migrations 迁移
 
 	php artisan migrate --package=cartalyst/sentry
 
-### Configuration
+### Configuration 配置
 
-After installing, you can publish the package configuration file into your application by running the following command:
+After installing, you can publish the package configuration file into your application by running the following command:  
+安装完成后，你可以运行下面的命令，将这个资源包的配置文件发布到你的应用程序中：
 
 	php artisan config:publish cartalyst/sentry
 
-This will publish the config file to `app/config/packages/cartalyst/sentry/config.php` where you can modify the package configuration.
+This will publish the config file to `app/config/packages/cartalyst/sentry/config.php` where you can modify the package configuration.  
+这将发布配置文件到 `app/config/packages/cartalyst/sentry/config.php` 在这里你可以修改这个资源包的配置。
 
 ## CodeIgniter 3.0-dev
 
@@ -132,9 +136,11 @@ $capsule->addConnection([
 $capsule->bootEloquent();
 ```
 
-The integration is done and you can now use all the available methods, here's an example:
+The integration is done and you can now use all the available methods, here's an example:  
+集成完毕后，你现在可以使用所有可用的方法，下面是一个例子：
 
 ```php
 // Find a user using the user email address
+// 使用“用户的 email 地址”来查找一个用户
 $user = Sentry::findUserByLogin('john.doe@example.com');
 ```
