@@ -5,11 +5,14 @@
 
 ## Laravel 4
 
-After you have installed the package, just follow the instructions.
+After you have installed the package, just follow the instructions.  
+在你安装这个资源包后，只需要根据提示操作。
 
-Sentry has optional support for Laravel 4 and it comes bundled with a Service Provider and a Facade for easy integration.
+Sentry has optional support for Laravel 4 and it comes bundled with a Service Provider and a Facade for easy integration.  
+Sentry 捆绑了可选的 Service Provider 和 Facade 支持，使 Laravel 4 的集成更加容易。
 
-After installing the package, open your Laravel config file `app/config/app.php` and add the following lines.
+After installing the package, open your Laravel config file `app/config/app.php` and add the following lines.  
+安装这个资源包后，打开你 Laravel 的 config 文件 `app/config/app.php` 添加以下几行。
 
 In the `$providers` array add the following service provider for this package.
 
