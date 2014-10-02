@@ -100,14 +100,18 @@ Authenticates and Remembers a user based on credentials. This is an helper funct
 
 ### Sentry::login()
 
-Logs in the provided user and sets properties in the session.
+Logs in the provided user and sets properties in the session.  
+登录所提供的用户并设置其属性于 session 中。
 
-If the login is successful, password reset fields and any invalid authentication attempts will be cleared.
+If the login is successful, password reset fields and any invalid authentication attempts will be cleared.  
+如果登录成功，“密码重置字段”和任何“无效认证尝试”将被清空。
 
 Param        | Required | Default | Type   | Description
 ------------ | -------- | ------- | ------ | -----------------------------------
 $user        | true     | null    | object | A user object `Cartalyst\Sentry\Users\UserInterface`.
+             |          |         |        | 一个实现了 `Cartalyst\Sentry\Users\UserInterface` 接口的 user 对象。
 $remember    | false    | false   | bool   | Flag to wether Sentry should remember the user. It sets a Cookie.
+             |          |         |        | 它将设置一个 Cookie，用来标记 Sentry 是否应该记住这个用户。
 
 #### Example
 
@@ -115,9 +119,11 @@ $remember    | false    | false   | bool   | Flag to wether Sentry should rememb
 try
 {
 	// Find the user using the user id
+	// 通过 user id 查找用户
 	$user = Sentry::findUserById(1);
 
 	// Log the user in
+	// 登录用户
 	Sentry::login($user, false);
 }
 catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
@@ -134,6 +140,7 @@ catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 }
 
 // Following is only needed if throttle is enabled
+// 仅当 throttling（限制） 开启时才需要以下内容
 catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
 {
 	$time = $throttle->getSuspensionTime();
@@ -148,19 +155,26 @@ catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
 
 #### Exceptions
 
-Below is a list of exceptions that this method can throw.
+Below is a list of exceptions that this method can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\LoginRequiredException      | When you don't provide the required `login` field, this exception will be thrown.
+                                                   | 当你没有提供必须的 `login` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotFoundException       | If the provided user was not found, this exception will be thrown.
+                                                   | 当提供的用户没有找到时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotActivatedException   | When the provided user is not activated, this exception will be thrown.
+                                                   | 当提供的用户未被激活时，这个异常将被抛出。
 Cartalyst\Sentry\Throttling\UserSuspendedException | When the provided user is suspended, this exception will be thrown.
+                                                   | 当提供的用户被暂停使用时，这个异常将被抛出。
 Cartalyst\Sentry\Throttling\UserBannedException    | When the provided user is banned, this exception will be thrown.
+                                                   | 当提供的用户被禁用时，这个异常将被抛出。
 
 ### Sentry::loginAndRemember()
 
-Logs in and Remembers a user based on credentials. This is an helper function for the `login()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.
+Logs in and Remembers a user based on credentials. This is an helper function for the `login()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.  
+基于凭证登录并记住用户。这是 `login()` 的辅助方法，将其 `$remember` 参数标记为 true ，因此用户将被记住（使用一个 cookie）。你可以用它实现在网站上看到的“记住我”的功能。
 
 #### Example
 
