@@ -184,9 +184,11 @@ Sentry::loginAndRemember($user);
 
 ### Sentry::logout()
 
-The logout method logs the user out and destroys all Sentry sessions / cookies for the user.
+The logout method logs the user out and destroys all Sentry sessions / cookies for the user.  
+logout 方法将登出用户，并销毁所有与 Sentry 有关的用户 sessions / cookies。
 
-This method does **not** fail or throw any Exceptions if there is no user logged in.
+This method does **not** fail or throw any Exceptions if there is no user logged in.  
+如果用户没有登录，这个方法 **并不会** 产生错误或抛出任何异常。
 
 #### Example
 
@@ -196,11 +198,14 @@ Sentry::logout();
 
 ### Sentry::check()
 
-The check method returns a `bool` of whether the user is logged in or not, or if the user is not activated.
+The check method returns a `bool` of whether the user is logged in or not, or if the user is not activated.  
+check 方法返回一个 `bool` 值来判断用户是否登录，或者，如果用户没有激活。
 
-If it's logged in, the current User is set in Sentry so you can easily access it via `getUser()`.
+If it's logged in, the current User is set in Sentry so you can easily access it via `getUser()`.  
+如果已经登录，则当前的用户将被设置进 Sentry，因此你可以轻松的通过 `getUser()` 来访问它。
 
-A user must be activated to pass `check()`.
+A user must be activated to pass `check()`.  
+一个用户必须激活才能够通过 `check()` 验证。
 
 #### Example
 
@@ -208,9 +213,11 @@ A user must be activated to pass `check()`.
 if ( ! Sentry::check())
 {
 	// User is not logged in, or is not activated
+	// 用户“未登录”或“未激活”
 }
 else
 {
 	// User is logged in
+	// 用户已经登录
 }
 ```
