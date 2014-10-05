@@ -1,5 +1,4 @@
-## Permissions
-## 权限
+## Permissions <small>权限</small>
 
 In this section we will cover how Sentry 2 permissions work and how the user
 permission inheritance behaves.  
