@@ -1,4 +1,4 @@
-## Permissions <small>权限</small>
+## Permissions // 权限
 
 In this section we will cover how Sentry 2 permissions work and how the user
 permission inheritance behaves.  
@@ -11,21 +11,18 @@ Sentry 1.
 That said, here are the values that your groups and users permissions can have:  
 也就是说，在这里你的分组和用户权限值可以是：
 
-##### Groups Permissions
-##### 分组权限
+##### Groups Permissions // 分组权限
 
 	0 : Deny
 	1 : Allow
 
-##### Users Permissions
-##### 用户权限
+##### Users Permissions // 用户权限
 
 	-1 : Deny
 	 1 : Allow
 	 0 : Inherit
 
-#### Permission Inheritance
-#### 权限继承
+#### Permission Inheritance // 权限继承
 
 Just as permissions are defined for groups and individual users, the permission
 inheritance model depends on a user's group.
@@ -39,8 +36,7 @@ An Administrator can assign different permissions to a user than is assigned to 
 is provided on this page to help you
  better understand how this exactly works.
 
-##### Administrator Group
-##### 管理员分组
+##### Administrator Group // 管理员分组
 
 Let's say you want to have two groups, an Administrator group and a Moderator
 group, for each group you can define their own permissions:
