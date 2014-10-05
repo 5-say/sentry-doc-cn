@@ -13,14 +13,14 @@ That said, here are the values that your groups and users permissions can have:
 
 ##### Groups Permissions // 分组权限
 
-	0 : Deny
-	1 : Allow
+	0 : Deny  // 拒绝
+	1 : Allow // 允许
 
 ##### Users Permissions // 用户权限
 
-	-1 : Deny
-	 1 : Allow
-	 0 : Inherit
+	-1 : Deny    // 拒绝
+	 1 : Allow   // 允许
+	 0 : Inherit // 继承
 
 #### Permission Inheritance // 权限继承
 
@@ -30,11 +30,14 @@ inheritance model depends on a user's group.
 An Administrator can assign different permissions to a user than is assigned to a group:
 
 - If a user is not assigned a permission, or if the user is assigned a permission of 0 then the user will inherit permissions from the group
+- 如果一个用户没有被指定一个权限的具体值，或者权限的值为 0，则用户将从所在分组继承权限。
 - If a user is assigned a permission of -1 or 1, then the user's permission will override the group permission
+- 如果一个用户被指定了 -1 或 1 的一个权限，则用户权限将覆盖分组权限。
 
 > **Note:** Permission Inheritance only works for users permissions, an example
 is provided on this page to help you
- better understand how this exactly works.
+ better understand how this exactly works.  
+ 权限的继承仅适用于用户权限，在本页中我们将提供一个例子，以帮助你更好的理解这个特性是如何工作的。
 
 ##### Administrator Group // 管理员分组
 
