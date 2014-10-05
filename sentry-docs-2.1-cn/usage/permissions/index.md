@@ -25,9 +25,11 @@ That said, here are the values that your groups and users permissions can have:
 #### Permission Inheritance // 权限继承
 
 Just as permissions are defined for groups and individual users, the permission
-inheritance model depends on a user's group.
+inheritance model depends on a user's group.  
+正如权限被区分为分组和单个用户，权限继承的模式取决于用户的分组。
 
-An Administrator can assign different permissions to a user than is assigned to a group:
+An Administrator can assign different permissions to a user than is assigned to a group:  
+管理员可以分配不同的权限给用户，在已经为其分配了一个分组的情况下：
 
 - If a user is not assigned a permission, or if the user is assigned a permission of 0 then the user will inherit permissions from the group
 - 如果一个用户没有被指定一个权限的具体值，或者权限的值为 0，则用户将从所在分组继承权限。
@@ -42,7 +44,8 @@ is provided on this page to help you
 ##### Administrator Group // 管理员分组
 
 Let's say you want to have two groups, an Administrator group and a Moderator
-group, for each group you can define their own permissions:
+group, for each group you can define their own permissions:  
+比方说你希望有两个分组，一个“管理员分组”和一个“主持人分组”，对于每个分组你都可以定义自己的权限：
 
 	{
 		"name" : "Administrator",
@@ -54,7 +57,7 @@ group, for each group you can define their own permissions:
 		}
 	}
 
-##### Moderator Group
+##### Moderator Group // 主持人分组
 
 	{
 		"name" : "Moderator",
@@ -68,9 +71,10 @@ group, for each group you can define their own permissions:
 
 
 And you have these three users, one as an Administrator, one as a Moderator
-and the last one has the Administrator and Moderator groups assigned.
+and the last one has the Administrator and Moderator groups assigned.  
+并且你还有这样三个用户，一个作为管理员，一个作为主持人，以及最后一个被指定了“管理员”和“主持人”的分组。
 
-##### User - John Rambo
+##### User - John Rambo // 用户 - John Rambo
 
 	{
 		"id" : 1,
@@ -80,11 +84,12 @@ and the last one has the Administrator and Moderator groups assigned.
 		"permissions" : null
 	}
 
-###### Actions he can execute
+###### Actions he can execute // 他可以执行的操作
 
-This user has access to everything and can execute every action on your application.
+This user has access to everything and can execute every action on your application.  
+这个用户拥有一切访问权限，并且可以在你的应用程序中执行任何操作。
 
-##### User - Rocky Balboa
+##### User - Rocky Balboa // 用户 - Rocky Balboa
 
 	{
 		"id" : 2,
@@ -96,13 +101,15 @@ This user has access to everything and can execute every action on your applicat
 		}
 	}
 
-###### Actions he can execute
+###### Actions he can execute // 他可以执行的操作
 
-View and Update users
+View and Update users  
+查看以及更新用户信息
 
-###### Actions he cannot execute
+###### Actions he cannot execute // 他不能执行的操作
 
-Create or Delete users
+Create or Delete users  
+创建或删除用户
 
 > **Note:** We are using `Permission Inheritance` here, hence the
 `user.update : 0` which means whatever you define on your group permission
