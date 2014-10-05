@@ -1,9 +1,9 @@
-## Authentication 认证
+## Authentication // 认证
 
 In this section, we will cover authentication and login.  
 在本节中，我们将介绍认证和登录。
 
-### Sentry::authenticate()
+### Sentry::authenticate() // 基于凭证认证一个用户
 
 Authenticates a user based on the provided credentials.  
 基于凭证认证一个用户。
@@ -89,7 +89,7 @@ Cartalyst\Sentry\Throttling\UserSuspendedException | When the provided user is s
 Cartalyst\Sentry\Throttling\UserBannedException    | When the provided user is banned, this exception will be thrown.
                                                    | 当提供的用户被禁用时，这个异常将被抛出。
 
-### Sentry::authenticateAndRemember()
+### Sentry::authenticateAndRemember() // 基于凭证认证并记住用户
 
 Authenticates and Remembers a user based on credentials. This is an helper function for the `authenticate()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.  
 基于凭证认证并记住用户。这是 `authenticate()` 的辅助方法，将其 `$remember` 参数标记为 true ，因此用户将被记住（使用一个 cookie）。你可以用它实现在网站上看到的“记住我”的功能。
@@ -98,7 +98,7 @@ Authenticates and Remembers a user based on credentials. This is an helper funct
 
 	Sentry::authenticateAndRemember($credentials);
 
-### Sentry::login()
+### Sentry::login() // 登录所提供的用户
 
 Logs in the provided user and sets properties in the session.  
 登录所提供的用户并设置其属性于 session 中。
@@ -171,7 +171,7 @@ Cartalyst\Sentry\Throttling\UserSuspendedException | When the provided user is s
 Cartalyst\Sentry\Throttling\UserBannedException    | When the provided user is banned, this exception will be thrown.
                                                    | 当提供的用户被禁用时，这个异常将被抛出。
 
-### Sentry::loginAndRemember()
+### Sentry::loginAndRemember() // 基于凭证登录并记住用户
 
 Logs in and Remembers a user based on credentials. This is an helper function for the `login()` which sets the `$remember` flag to true so the user is remembered (using a cookie). This is the "remember me" you are used to see on web sites.  
 基于凭证登录并记住用户。这是 `login()` 的辅助方法，将其 `$remember` 参数标记为 true ，因此用户将被记住（使用一个 cookie）。你可以用它实现在网站上看到的“记住我”的功能。
@@ -182,7 +182,7 @@ Logs in and Remembers a user based on credentials. This is an helper function fo
 Sentry::loginAndRemember($user);
 ```
 
-### Sentry::logout()
+### Sentry::logout() // 登出用户
 
 The logout method logs the user out and destroys all Sentry sessions / cookies for the user.  
 logout 方法将登出用户，并销毁所有与 Sentry 有关的用户 sessions / cookies。
@@ -196,7 +196,7 @@ This method does **not** fail or throw any Exceptions if there is no user logged
 Sentry::logout();
 ```
 
-### Sentry::check()
+### Sentry::check() // 判断用户是否登录
 
 The check method returns a `bool` of whether the user is logged in or not, or if the user is not activated.  
 check 方法返回一个 `bool` 值来判断用户是否登录，或者，如果用户没有激活。

@@ -1,4 +1,4 @@
-# Integration 安装
+# Integration // 安装
 
 > **Note:** The database schema is located under `vendor/cartalyst/sentry/schema/mysql.sql`  
 > **Note:** 数据库架构位于 `vendor/cartalyst/sentry/schema/mysql.sql` 文件中
@@ -24,11 +24,11 @@ In the `$aliases` array add the following facade for this package.
 
 	'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 
-### Migrations 迁移
+### Migrations // 迁移
 
 	php artisan migrate --package=cartalyst/sentry
 
-### Configuration 配置
+### Configuration // 配置
 
 After installing, you can publish the package configuration file into your application by running the following command:  
 安装完成后，你可以运行下面的命令，将这个资源包的配置文件发布到你的应用程序中：
