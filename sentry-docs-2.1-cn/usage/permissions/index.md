@@ -114,9 +114,10 @@ Create or Delete users
 > **Note:** We are using `Permission Inheritance` here, hence the
 `user.update : 0` which means whatever you define on your group permission
 this user permission will inherit that permission, which means that in this
-case the user is allowed to update users.
+case the user is allowed to update users.  
+在这里我们使用了 `权限继承`，因此 `user.update : 0` 意味着无论你在分组中如何定义权限，这个用户都将继承那个权限，也就意味着在这种情况下允许这个用户“更新其他用户”。
 
-##### User - Bruce Wayne
+##### User - Bruce Wayne // 用户 - Bruce Wayne
 
 	{
 		"id" : 3,
@@ -129,13 +130,15 @@ case the user is allowed to update users.
 		}
 	}
 
-###### Actions he can execute
+###### Actions he can execute // 他可以执行的操作
 
-Create, Update and View users
+Create, Update and View users  
+创建、更新以及查看用户
 
-###### Actions he cannot execute
+###### Actions he cannot execute // 他不能执行的操作
 
-Delete users
+Delete users  
+删除用户
 
 Since this is a special user, mainly because this user has two assigned groups,
 there are some things that you should know when assigning multiple groups to
