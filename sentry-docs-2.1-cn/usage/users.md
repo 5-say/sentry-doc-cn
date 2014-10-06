@@ -752,15 +752,17 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### hasAccess($permission) // 
+#### hasAccess($permission) // 检查用户是否被授予了指定的权限
 
 Checks to see if a user been granted a certain permission. This includes any
 permissions given to them by groups they may be apart of as well. Users may
 also have permissions with a value of '-1'. This value is used to deny users of
-permissions that may have been assigned to them from a group.
+permissions that may have been assigned to them from a group.  
+检查用户是否被授予了指定的权限。这包括任何从他们的分组赋予的权限，它们可以是分开定义的。用户也可以拥有值为 '-1' 的私有权限。这个值用于拒绝用户拥有特定的权限，即使他们所在的分组给予了其它值。
 
 Any user with `superuser` permissions automatically has access to everything,
-regardless of the user permissions and group permissions.
+regardless of the user permissions and group permissions.  
+任何具有 `superuser` 权限的用户都将自动获得所有权限，无论用户定义了怎样的私有权限或分组。
 
 ```php
 try
