@@ -373,19 +373,23 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\UserNotFoundException       | If the provided user was not found, this exception will be thrown.
+                                                   | 当指定的用户不存在时，这个异常将被抛出。
 
-### Activating a User
+### Activating a User // 激活一个用户
 
-User activation is very easy with Sentry, you need to first find the user you want to activate, then use the `attemptActivation()` method and provide the activation code, if the activation passes it will return `true` otherwise, it will return `false` .
+User activation is very easy with Sentry, you need to first find the user you want to activate, then use the `attemptActivation()` method and provide the activation code, if the activation passes it will return `true` otherwise, it will return `false` .  
+使用 Sentry 机会用户是非常容易的，你首先需要找到你想要激活的用户，然后使用 `attemptActivation()` 方法并提供激活码，如果激活成功它将返回 `true` 反之则返回 `false`。
 
-> **Note:** If the user you are trying to activate, is already activated, the following Exception `Cartalyst\Sentry\Users\UserAlreadyActivatedException` will be thrown.
+> **Note:** If the user you are trying to activate, is already activated, the following Exception `Cartalyst\Sentry\Users\UserAlreadyActivatedException` will be thrown.  
+> 如果你尝试激活的用户，已经被激活，则 `Cartalyst\Sentry\Users\UserAlreadyActivatedException` 异常将被抛出。
 
 #### Example
 
@@ -415,20 +419,24 @@ catch (Cartalyst\Sentry\Users\UserAlreadyActivatedException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                            | Description
 ---------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\UserAlreadyActivatedException | If the provided user is already activated, this exception will be thrown.
+                                                     | 当指定的用户已经激活时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotFoundException         | If the provided user was not found, this exception will be thrown.
+                                                     | 当指定的用户不存在时，这个异常将被抛出。
 
-### Reset a User Password
+### Reset a User Password // 重置用户密码
 
-In this section you will learn how easy it is to reset a user password with Sentry 2.
+In this section you will learn how easy it is to reset a user password with Sentry 2.  
+在本节中你将学习如何使用 Sentry 2 简单的重置一个用户的密码。
 
-#### Step 1
+#### Step 1 // 步骤 1
 
 The first step is to get a password reset code, to do this we use the
 `getResetPasswordCode()` method.
@@ -488,9 +496,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                     | Description
 --------------------------------------------- | --------------------------------------------------------------------------------
@@ -624,9 +633,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                    | Description
 -------------------------------------------- | --------------------------------------------------------------------------------
