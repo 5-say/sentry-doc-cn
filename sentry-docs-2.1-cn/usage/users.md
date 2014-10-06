@@ -173,7 +173,8 @@ Updating users information is very easy with Sentry, you just need to find the u
 In this example we are just updating the user information.  
 在这个例子中我们仅更新了用户的信息。
 
-> **Note:** If you provide another email address, and that email address is already registered in your system, the following Exception `Cartalyst\Sentry\Users\UserExistsException` will be thrown.
+> **Note:** If you provide another email address, and that email address is already registered in your system, the following Exception `Cartalyst\Sentry\Users\UserExistsException` will be thrown.  
+> 如果你提供了另一个 email 地址，而这个 email 地址已经在系统中注册，则 `Cartalyst\Sentry\Users\UserExistsException` 异常将被抛出。
 
 ```php
 try
@@ -205,11 +206,13 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-**Assign a new Group to a User**
+**Assign a new Group to a User // 指定一个新的分组给用户**
 
-In this example we are assigning the provided Group to the provided User.
+In this example we are assigning the provided Group to the provided User.  
+在这个例子中我们分配一个指定的分组给一个指定的用户。
 
-> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.
+> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.  
+> 如果指定的分组不存在，则 `Cartalyst\Sentry\Groups\GroupNotFoundException` 异常将被抛出。
 
 ```php
 try
@@ -240,11 +243,13 @@ catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
 }
 ```
 
-**Remove a Group from the User**
+**Remove a Group from the User // 移除用户的一个分组**
 
-In this example we are removing the provided Group from the provided User.
+In this example we are removing the provided Group from the provided User.  
+在这个例子中我们移除了指定用户的一个指定分组。
 
-> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.
+> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.  
+> 如果指定的分组不存在，则 `Cartalyst\Sentry\Groups\GroupNotFoundException` 异常将被抛出。
 
 ```php
 try
@@ -275,11 +280,13 @@ catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
 }
 ```
 
-**Update the User details and assign a new Group**
+**Update the User details and assign a new Group // 更新用户的详细信息，并分配一个新的分组**
 
-This is a combination of the previous examples, where we are updating the user information and assigning a new Group the provided User.
+This is a combination of the previous examples, where we are updating the user information and assigning a new Group the provided User.  
+这是前面的例子，在这里我们要更新的用户信息，并分配一个新的分组给用户。
 
-> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.
+> **Note:** If the provided Group is not found an Exception `Cartalyst\Sentry\Groups\GroupNotFoundException` will be thrown.  
+> 如果指定的分组不存在，则 `Cartalyst\Sentry\Groups\GroupNotFoundException` 异常将被抛出。
 
 ```php
 try
@@ -328,20 +335,26 @@ catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\LoginRequiredException      | When you don't provide the required `login` field, this exception will be thrown.
+                                                   | 当你没有提供必要的 `login` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserExistsException         | This exception will be thrown when the user you are trying to create already exists in your database.
+                                                   | 当你试图创建一个数据库中已存在的用户时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserNotFoundException       | If the provided user was not found, this exception will be thrown.
+                                                   | 当指定的用户不存在时，这个异常将被抛出。
 Cartalyst\Sentry\Groups\GroupNotFoundException     | This exception will be thrown when the group that's being assigned to the user doesn't exist.
+                                                   | 当你试图创建一个数据库中已存在的分组时，这个异常将被抛出。
 
-### Delete a user
+### Delete a user // 删除一个用户
 
-Deleting users is very simple and easy.
+Deleting users is very simple and easy.  
+删除用户是非常简单并且容易的。
 
 #### Example
 
