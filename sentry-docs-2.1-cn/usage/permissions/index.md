@@ -164,4 +164,5 @@ example, you don't need to do this, but let's say that in your group you are
 allowing your users to delete other users, but for this specific user you don't
 want him to be able to do that? To achieve this you `deny` this user permission
 directly on the user, so no matter what your group permission looks like, this
-user will never be able to delete other users.
+user will never be able to delete other users.  
+请注意，我们拒绝了这个用户的 `user.delete` 权限，在这个例子中，你并不需要这么做，但让我们设想一下有没有一种可能，在你的分组中你允许你的用户去删除其他用户，但对于这个特殊的用户你不希望他能够做到？要做到这一点，你可以直接 `拒绝` 这个用户的权限，因此无论你赋予了什么样权限的分组，这个用户将永远无法删除其他用户。
