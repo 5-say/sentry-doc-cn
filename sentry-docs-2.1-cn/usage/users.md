@@ -608,7 +608,7 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 
 #### Find a User by their Login Id // 通过登录字段查找一个用户
 
-Find a user by their login ID.
+Find a user by their login ID.  
 通过登录字段查找一个用户。
 
 ```php
@@ -822,7 +822,7 @@ catch (Cartalyst\Sentry\UserNotFoundException $e)
 
 #### isActivated() // 检查用户是否已被激活
 
-Checks if a user is activated.
+Checks if a user is activated.  
 检查用户是否已被激活。
 
 ```php

@@ -1,10 +1,12 @@
-## Throttle
+## Throttle // 限制
 
-### Disable the Throttling Feature
+### Disable the Throttling Feature // 禁止限制功能
 
 Disables the throttling feature.
+禁止限制功能。
 
-Can be done on the throttle provider (global) level or on a throttle instance itself.
+Can be done on the throttle provider (global) level or on a throttle instance itself.  
+可以通过 throttle provider (全局命名空间) 或 throttle 实例本身来完成。
 
 #### Example
 
@@ -16,11 +18,13 @@ $throttleProvider = Sentry::getThrottleProvider();
 $throttleProvider->disable();
 ```
 
-### Enable the Throttling Feature
+### Enable the Throttling Feature // 启用限制功能
 
-Enables the throttling feature.
+Enables the throttling feature.  
+启用限制功能。
 
-Can be done on the throttle provider (global) level or on a throttle instance itself.
+Can be done on the throttle provider (global) level or on a throttle instance itself.  
+可以通过 throttle provider (全局命名空间) 或 throttle 实例本身来完成。
 
 #### Example
 
@@ -32,9 +36,10 @@ $throttleProvider = Sentry::getThrottleProvider();
 $throttleProvider->enable();
 ```
 
-### Check the Throttling Feature Status
+### Check the Throttling Feature Status // 检查限制功能是否开启
 
-Checks to see if the throttling feature is enabled or disabled.
+Checks to see if the throttling feature is enabled or disabled.  
+检查限制功能是否开启。
 
 #### Example
 
@@ -53,11 +58,12 @@ else
 }
 ```
 
-### User Throttling
+### User Throttling // 针对用户的限制
 
-#### Ban user(s)
+#### Ban user(s) // 禁用用户
 
-Bans the user associated with the throttle.
+Bans the user associated with the throttle.  
+禁用与 throttle 相关联的用户。
 
 ```php
 try
@@ -74,9 +80,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Unban user(s)
+#### Unban user(s) // 解禁用户
 
-Unbans the user associated with the throttle.
+Unbans the user associated with the throttle.  
+解除禁用与 throttle 相关联的用户。
 
 ```php
 try
@@ -93,9 +100,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Check if a User is Banned
+#### Check if a User is Banned // 检查用户是否已被禁用
 
 Checks to see if the user is banned.
+检查用户是否已被禁用。
 
 ```php
 try
@@ -117,9 +125,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Suspend user(s)
+#### Suspend user(s) // 暂时挂起用户
 
-Suspends a user temporarily. Length of the suspension is set by the driver or setSuspensionTime($minutes).
+Suspends a user temporarily. Length of the suspension is set by the driver or setSuspensionTime($minutes).  
+暂时挂起用户，该挂起时长取决于其驱动设置或 `setSuspensionTime($minutes)` 方法。
 
 ```php
 try
@@ -136,9 +145,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Unsuspend user(s)
+#### Unsuspend user(s) // 取消用户挂起状态
 
-Unsuspends a login. This also clears all previous attempts by the specified login if they were suspended.
+Unsuspends a login. This also clears all previous attempts by the specified login if they were suspended.  
+取消挂起状态。这也将清除所有之前的尝试记录，如果他曾经被挂起。
 
 ```php
 try
@@ -155,9 +165,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Check if a User is Suspended
+#### Check if a User is Suspended // 检查用户是否已被挂起
 
-Checks to see if the user is suspended.
+Checks to see if the user is suspended.  
+检查用户是否已被挂起。
 
 ```php
 try
