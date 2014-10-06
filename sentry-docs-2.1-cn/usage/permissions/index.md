@@ -142,12 +142,14 @@ Delete users
 
 Since this is a special user, mainly because this user has two assigned groups,
 there are some things that you should know when assigning multiple groups to
-an user.
+an user.  
+由于这是一个特殊的用户，主要是因为这个用户有两个指定的分组，某些情况下你应该知道何时分配多个分组给一个用户。
 
 When a user has two or more groups assigned, if those groups have the same
 permissions but different permission access's are assigned,
 once one of those group permissions are denied, the user will be denied access
-to that permission no matter what the other groups has as a permission value.
+to that permission no matter what the other groups has as a permission value.  
+当一个用户分配了两个或两个以上的分组，如果这些分组定义了相同的权限，但权限的赋值不同，一旦这些分组的权限之一被拒绝，用户将被拒绝拥有这个权限，无论在其它分组中对这个权限赋予了什么值。
 
 Which means for you to `allow` a permission to this specific user, you need to
 change the user permissions.
