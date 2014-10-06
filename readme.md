@@ -1,7 +1,8 @@
 sentry-doc-cn
 =================
 
-For [cartalyst/sentry](https://github.com/cartalyst/sentry).
+For [cartalyst/sentry](https://github.com/cartalyst/sentry).  
+中英对照式翻译。
 
 ---
 
@@ -11,7 +12,7 @@ For [cartalyst/sentry](https://github.com/cartalyst/sentry).
   - [x] [权限](/sentry-docs-2.1-cn/usage/permissions/index.md)
   - [x] [分组](/sentry-docs-2.1-cn/usage/groups.md)
   - [x] [用户](/sentry-docs-2.1-cn/usage/users.md)
-  - [ ] [限制](/sentry-docs-2.1-cn/usage/throttling.md)
+  - [x] [限制](/sentry-docs-2.1-cn/usage/throttling.md)
 
 
 
