@@ -772,6 +772,7 @@ try
 
 	// Check if the user has the 'admin' permission. Also,
 	// multiple permissions may be used by passing an array
+	// 要检查多个权限需要使用一个数组来进行参数传递
 	if ($user->hasAccess('admin'))
 	{
 		// User has access to the given permission
@@ -787,13 +788,15 @@ catch (Cartalyst\Sentry\UserNotFoundException $e)
 }
 ```
 
-#### hasAnyAccess($permissions)
+#### hasAnyAccess($permissions) // 检查用户是否被授予了指定权限中的一种
 
 This method calls the `hasAccess()` method, and it is used to check if an user
-has access to any of the provided permissions.
+has access to any of the provided permissions.  
+这个方法调用了 `hasAccess()` 方法，它是用来检测一个用户是否被授予了指定权限中的一种。
 
 If one of the provided permissions is found it will return `true` even though the
-user may not have access to the other provided permissions.
+user may not have access to the other provided permissions.  
+如果指定权限之一通过检查则立即返回 `true`，即使用户可能并不具备其他权限。
 
 ```php
 try
@@ -817,9 +820,10 @@ catch (Cartalyst\Sentry\UserNotFoundException $e)
 }
 ```
 
-#### isActivated()
+#### isActivated() // 检查用户是否已被激活
 
 Checks if a user is activated.
+检查用户是否已被激活。
 
 ```php
 try
@@ -843,9 +847,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### isSuperUser()
+#### isSuperUser() // 检查是否为超级用户
 
-Returns if the user is a super user, it means, that has access to everything regardless of permissions.
+Returns if the user is a super user, it means, that has access to everything regardless of permissions.  
+如果用户是超级用户，则意味着，他将拥有所有的权限。
 
 ```php
 try
@@ -869,9 +874,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### inGroup($group)
+#### inGroup($group) // 检查用户是否在一个指定的分组中
 
-Checks if a user is in a certain group.
+Checks if a user is in a certain group.  
+检查用户是否在一个指定的分组中。
 
 ```php
 try
