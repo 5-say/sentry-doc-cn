@@ -152,10 +152,12 @@ to that permission no matter what the other groups has as a permission value.
 当一个用户分配了两个或两个以上的分组，如果这些分组定义了相同的权限，但权限的赋值不同，一旦这些分组的权限之一被拒绝，用户将被拒绝拥有这个权限，无论在其它分组中对这个权限赋予了什么值。
 
 Which means for you to `allow` a permission to this specific user, you need to
-change the user permissions.
+change the user permissions.  
+这意味着你要 `允许` 一个权限给这个特殊的用户，你需要改变用户的私有权限。
 
 In this specific case, we allowed the user to create a new user by changing the
-`user.create : 1` permission.
+`user.create : 1` permission.  
+在这种特殊情况下，我们通过改变权限 `user.create : 1` 来允许用户创建其他的新用户。
 
 Notice that we are denying the `user.delete` permission of this user, in this
 example, you don't need to do this, but let's say that in your group you are
