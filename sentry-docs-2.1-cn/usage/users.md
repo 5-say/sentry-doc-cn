@@ -476,6 +476,7 @@ try
 	$user = Sentry::findUserById(1);
 
 	// Check if the reset password code is valid
+	// 检查重置密码的代码是否有效
 	if ($user->checkResetPasswordCode('8f1Z7wA4uVt7VemBpGSfaoI9mcjdEwtK8elCnQOb'))
 	{
 		// Attempt to reset the user password
@@ -483,15 +484,18 @@ try
 		if ($user->attemptResetPassword('8f1Z7wA4uVt7VemBpGSfaoI9mcjdEwtK8elCnQOb', 'new_password'))
 		{
 			// Password reset passed
+			// 密码重置通过
 		}
 		else
 		{
 			// Password reset failed
+			// 密码重置失败
 		}
 	}
 	else
 	{
 		// The provided password reset code is Invalid
+		// 所提供的密码重置代码是无效的
 	}
 }
 catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
@@ -508,14 +512,17 @@ Below is a list of exceptions that the methods can throw.
 Exception                                     | Description
 --------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\UserNotFoundException  | If the provided user was not found, this exception will be thrown.
+                                              | 当指定的用户不存在时，这个异常将被抛出。
 
-### Finding Users
+### Finding Users // 查找用户
 
-Finding users can sometimes be difficult and harsh, well, Sentry provides you simple methods to find your users.
+Finding users can sometimes be difficult and harsh, well, Sentry provides you simple methods to find your users.  
+查找用户有时是十分困难的，好了，Sentry 为你提供了简单的方法来找到你的用户。
 
-#### Get the Current Logged in User
+#### Get the Current Logged in User // 获取当前登录的用户
 
-Returns the user that's set with Sentry, does not check if a user is logged in or not. To do that, use `check()` instead.
+Returns the user that's set with Sentry, does not check if a user is logged in or not. To do that, use `check()` instead.  
+直接返回设置入 Sentry 中的用户，不检查特定的用户是否登录，如果需要，请使用 `check()` 代替。
 
 ```php
 try
@@ -528,29 +535,34 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 	// User wasn't found, should only happen if the user was deleted
 	// when they were already logged in or had a "remember me" cookie set
 	// and they were deleted.
+	// 用户未找到，应该仅发生在，当用户已登录后，或已经获得 "remember me" cookie 的设置后，其账号被删除时。
 }
 ```
 
-#### Find all the Users
+#### Find all the Users // 查找所有的用户
 
-This will return all the users.
+This will return all the users.  
+这将返回所有的用户。
 
 ```php
 $users = Sentry::findAllUsers();
 ```
 
-#### Find all the Users with access to a permissions(s)
+#### Find all the Users with access to a permissions(s) // 查找所有具有指定权限的用户
 
-Finds all users with access to a permission(s).
+Finds all users with access to a permission(s).  
+查找所有具有指定权限的用户。
 
 ```php
 // Feel free to pass a string for just one permission instead
+// 当仅指定一个权限时，可以直接传递一个字符串作为参数
 $users = Sentry::findAllUsersWithAccess(array('admin', 'other'));
 ```
 
-#### Find all the Users in a Group
+#### Find all the Users in a Group // 查找分组下的所有用户
 
 Finds all users assigned to a group.
+查找指定分组下的所有用户。
 
 ```php
 $group = Sentry::findGroupByName('admin');
@@ -558,9 +570,10 @@ $group = Sentry::findGroupByName('admin');
 $users = Sentry::findAllUsersInGroup($group);
 ```
 
-#### Find a User by their Credentials
+#### Find a User by their Credentials // 根据凭证查找用户
 
-Find a user by an array of credentials, which must include the login column. Hashed fields will be hashed and checked against their value in the database.
+Find a user by an array of credentials, which must include the login column. Hashed fields will be hashed and checked against their value in the database.  
+根据凭证数组查找一个用户，其中必须包含登录字段。哈希字段将被自动散列并比对数据库中的值。
 
 ```php
 try
@@ -577,9 +590,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Find a User by their Id
+#### Find a User by their Id // 通过 ID 查找一个用户
 
-Find a user by their ID.
+Find a user by their ID.  
+通过 ID 查找一个用户。
 
 ```php
 try
