@@ -561,7 +561,7 @@ $users = Sentry::findAllUsersWithAccess(array('admin', 'other'));
 
 #### Find all the Users in a Group // 查找分组下的所有用户
 
-Finds all users assigned to a group.
+Finds all users assigned to a group.  
 查找指定分组下的所有用户。
 
 ```php
@@ -606,9 +606,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Find a User by their Login Id
+#### Find a User by their Login Id // 通过登录字段查找一个用户
 
 Find a user by their login ID.
+通过登录字段查找一个用户。
 
 ```php
 try
@@ -621,9 +622,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Find a User by their Activation Code
+#### Find a User by their Activation Code // 通过激活码查找一个用户
 
-Find a user by their registration activation code.
+Find a user by their registration activation code.  
+通过注册时的激活码查找一个用户。
 
 ```php
 try
@@ -636,9 +638,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Find a User by their Reset Password Code
+#### Find a User by their Reset Password Code // 通过密码重置代码查找一个用户
 
-Find a user by their reset password code.
+Find a user by their reset password code. 
+通过密码重置代码查找一个用户。
 
 ```php
 try
@@ -659,12 +662,14 @@ Below is a list of exceptions that the methods can throw.
 Exception                                    | Description
 -------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\UserNotFoundException | If the provided user was not found, this exception will be thrown.
+                                             | 当指定的用户不存在时，这个异常将被抛出。
 
-### Helpers
+### Helpers // 辅助
 
-#### checkPassword()
+#### checkPassword() // 验证密码
 
-Checks if the provided password matches the user's current password.
+Checks if the provided password matches the user's current password.  
+验证提供的密码是否与用户当前的密码匹配。
 
 ```php
 try
@@ -687,9 +692,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### getGroups()
+#### getGroups() // 获取用户的分组
 
-Returns the user groups.
+Returns the user groups.  
+返回用户的分组。
 
 ```php
 try
@@ -706,9 +712,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### getPermissions()
+#### getPermissions() // 获取用户的私有权限
 
-Returns the user permissions.
+Returns the user permissions.  
+返回用户的私有权限。
 
 ```php
 try
@@ -725,9 +732,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### getMergedPermissions()
+#### getMergedPermissions() // 返回合并后的权限
 
-Returns an array of merged permissions from groups and the user permissions.
+Returns an array of merged permissions from groups and the user permissions.  
+返回一个权限数组，它合并了用户的私有权限以及所在分组权限。
 
 ```php
 try
@@ -744,7 +752,7 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### hasAccess($permission)
+#### hasAccess($permission) // 
 
 Checks to see if a user been granted a certain permission. This includes any
 permissions given to them by groups they may be apart of as well. Users may
