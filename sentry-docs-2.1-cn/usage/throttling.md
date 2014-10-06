@@ -365,7 +365,8 @@ Cartalyst\Sentry\Users\UserBannedException         | When the provided user is b
 
 #### Find a User by their Id // 通过 ID 查找用户
 
-Retrieves a throttle object based on the user ID provided. Will always retrieve a throttle object.
+Retrieves a throttle object based on the user ID provided. Will always retrieve a throttle object.  
+基于“用户ID”获取一个 throttle 对象。将始终获取一个 throttle 对象。
 
 ```php
 try
@@ -378,9 +379,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Find a User by their Login
+#### Find a User by their Login // 通过“登录字段”查找用户
 
-Retrieves a throttle object based on the user login provided. Will always retrieve a throttle object.
+Retrieves a throttle object based on the user login provided. Will always retrieve a throttle object.  
+基于“登录字段”获取一个 throttle 对象。将始终获取一个 throttle 对象。
 
 ```php
 try
@@ -393,10 +395,12 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that the methods can throw.
+Below is a list of exceptions that the methods can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                    | Description
 -------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\UserNotFoundException | If the provided user was not found, this exception will be thrown.
+                                             | 如果提供的用户不存在，这个异常将被抛出。
