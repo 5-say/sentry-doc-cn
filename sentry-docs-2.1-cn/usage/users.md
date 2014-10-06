@@ -149,23 +149,29 @@ catch (Cartalyst\Sentry\Users\UserExistsException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that this method can throw.
+Below is a list of exceptions that this method can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\LoginRequiredException      | When you don't provide the required `login` field, this exception will be thrown.
+                                                   | 当你没有提供必要的 `login` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\PasswordRequiredException   | When you don't provide the required `password` field, this exception will be thrown.
+                                                   | 当你没有提供必要的 `密码` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserExistsException         | This exception will be thrown when the user you are trying to create already exists on your database.
+                                                   | 当你试图创建一个数据库中已经存在的用户时，这个异常将被抛出。
 
-### Update a User
+### Update a User // 更新一个用户
 
-Updating users information is very easy with Sentry, you just need to find the user you want to update and update their information. You can add or remove groups from users as well.
+Updating users information is very easy with Sentry, you just need to find the user you want to update and update their information. You can add or remove groups from users as well.  
+使用 Sentry 更新用户信息是非常容易的，你只需要找到你想要更新的用户并更新他的信息。你同样可以增加或移除用户的分组。
 
 #### Examples
 
-In this example we are just updating the user information.
+In this example we are just updating the user information.  
+在这个例子中我们仅更新了用户的信息。
 
 > **Note:** If you provide another email address, and that email address is already registered in your system, the following Exception `Cartalyst\Sentry\Users\UserExistsException` will be thrown.
 
