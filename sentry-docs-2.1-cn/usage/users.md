@@ -1,18 +1,22 @@
-## Users
+## Users // 用户
 
-In this section we'll cover how you can create or register users, assign groups and permissions to users.
+In this section we'll cover how you can create or register users, assign groups and permissions to users.  
+在本节中，我们将介绍如何创建和注册用户，分配组和权限的用户。
 
-### Sentry::createUser()
+### Sentry::createUser() // 创建用户
 
-To create a new user you need to pass an `array()` of user fields into the `create()` method, please note, that the `login` field and the password are required, all the other fields are optional.
+To create a new user you need to pass an `array()` of user fields into the `create()` method, please note, that the `login` field and the password are required, all the other fields are optional.  
+要创建一个新的用户，你需要传递一个包含用户字段的 `array()` 到 `create()` 方法中，请注意，其中的 `login` 字段和密码字段是必须的，而所有其它的字段都是可选的。
 
 Param        | Required | Default | Type  | Description
 ------------ | -------- | ------- | ----- | -----------------------------------
 $credentials | true     | null    | array | The user credentials and attributes.
+             |          |         |       | 用户凭证和属性。
 
 #### Examples
 
-Create a User and assign this new user an existing group.
+Create a User and assign this new user an existing group.  
+创建用户并分配现有的分组给新增的用户。
 
 ```php
 try
@@ -48,9 +52,11 @@ catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
 }
 ```
 
-Create a new user and set permissions on this user.
+Create a new user and set permissions on this user.  
+创建一个新的用户并为其设置私有权限。
 
-This example does pretty much the same as the previous one with the exception that we are not assigning him any group, but we are granting this user some permissions.
+This example does pretty much the same as the previous one with the exception that we are not assigning him any group, but we are granting this user some permissions.  
+这个例子几乎与前一个相同，除了我们没有给他指定任何分组这个例外，但我们授予了这个用户一些私有权限。
 
 ```php
 try
@@ -82,22 +88,28 @@ catch (Cartalyst\Sentry\Users\UserExistsException $e)
 }
 ```
 
-#### Exceptions
+#### Exceptions // 异常
 
-Below is a list of exceptions that this method can throw.
+Below is a list of exceptions that this method can throw.  
+下面是该方法可能抛出的异常的列表。
 
 Exception                                          | Description
 -------------------------------------------------- | --------------------------------------------------------------------------------
 Cartalyst\Sentry\Users\LoginRequiredException      | When you don't provide the required `login` field, this exception will be thrown.
+                                                   | 当你没有提供必要的 `login` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\PasswordRequiredException   | When you don't provide the `password` field, this exception will be thrown.
+                                                   | 当你没有提供 `密码` 字段时，这个异常将被抛出。
 Cartalyst\Sentry\Users\UserExistsException         | This exception will be thrown when the user you are trying to create already exists on your database.
+                                                   | 当你试图创建数据库中已经存在的用户时，这个异常将被抛出。
 Cartalyst\Sentry\Groups\GroupNotFoundException     | This exception will be thrown when the group that's being assigned to the user doesn't exist.
+                                                   | 当被指定给用户的分组不存在时，这个异常将被抛出。
 
-### Sentry::register()
+### Sentry::register() // 注册用户
 
 Registering a user will require the user to be manually activated but you can bypass this passing a boolean of `true` as a second parameter.
 
-If the user already exists but is not activated, it will create a new activation code.
+If the user already exists but is not activated, it will create a new activation code.  
+如果该用户已经存在，但没有被激活，它会创建一个新的激活码。
 
 Param        | Required | Default | Type    | Description
 ------------ | -------- | ------- | ------- | -----------------------------------
