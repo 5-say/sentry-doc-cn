@@ -439,7 +439,8 @@ In this section you will learn how easy it is to reset a user password with Sent
 #### Step 1 // 步骤 1
 
 The first step is to get a password reset code, to do this we use the
-`getResetPasswordCode()` method.
+`getResetPasswordCode()` method.  
+第一步是获得一个密码重置代码，为此我们使用 `getResetPasswordCode()` 方法。
 
 ##### Example
 
@@ -458,11 +459,13 @@ The first step is to get a password reset code, to do this we use the
 		echo 'User was not found.';
 	}
 
-#### Step 2
+#### Step 2 // 步骤 2
 
-After your user received the password reset code you need to provide a way for them to validate that code, and reset their password.
+After your user received the password reset code you need to provide a way for them to validate that code, and reset their password.  
+在你的用户收到重置代码后，你需要提供一种方式让他们去验证这个代码，并重置他的密码。
 
-All the logic part on how you pass the reset password code is all up to you.
+All the logic part on how you pass the reset password code is all up to you.  
+验证成功后，重置密码的所有逻辑部分的代码都由你决定。
 
 #### Example
 
@@ -476,6 +479,7 @@ try
 	if ($user->checkResetPasswordCode('8f1Z7wA4uVt7VemBpGSfaoI9mcjdEwtK8elCnQOb'))
 	{
 		// Attempt to reset the user password
+		// 尝试重置用户密码
 		if ($user->attemptResetPassword('8f1Z7wA4uVt7VemBpGSfaoI9mcjdEwtK8elCnQOb', 'new_password'))
 		{
 			// Password reset passed
