@@ -106,7 +106,8 @@ Cartalyst\Sentry\Groups\GroupNotFoundException     | This exception will be thro
 
 ### Sentry::register() // 注册用户
 
-Registering a user will require the user to be manually activated but you can bypass this passing a boolean of `true` as a second parameter.
+Registering a user will require the user to be manually activated but you can bypass this passing a boolean of `true` as a second parameter.  
+注册的用户将需要用户手动激活，但你可以通过传递一个布尔值为 `true` 的第二个参数来跳过激活步骤。
 
 If the user already exists but is not activated, it will create a new activation code.  
 如果该用户已经存在，但没有被激活，它会创建一个新的激活码。
@@ -114,7 +115,9 @@ If the user already exists but is not activated, it will create a new activation
 Param        | Required | Default | Type    | Description
 ------------ | -------- | ------- | ------- | -----------------------------------
 $credentials | true     | null    | array   | The user credentials and attributes.
+             |          |         |         | 用户凭证和属性。
 $activate    | false    | false   | boolean | Flag to wether activate the user or not.
+             |          |         |         | 判断是否激活用户的标识。
 
 #### Example
 
