@@ -190,9 +190,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Set the User Suspension Time
+#### Set the User Suspension Time // 设置用户挂起时长
 
-Sets the length of the suspension.
+Sets the length of the suspension.  
+设置用户挂起时长。
 
 ```php
 try
@@ -207,9 +208,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Get the User Suspension Time
+#### Get the User Suspension Time // 获取用户挂起时长
 
 Retrieves the length of the suspension time set by the throttling driver.
+获取用户挂起时长。
 
 ```php
 try
@@ -224,9 +226,10 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Add a Login Attempt
+#### Add a Login Attempt // 累加一个登录尝试次数
 
-Adds an attempt to the throttle object.
+Adds an attempt to the throttle object.  
+累加一个登录尝试次数。
 
 ```php
 try
@@ -241,7 +244,7 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 }
 ```
 
-#### Get Login Attempts
+#### Get Login Attempts // 获取登录尝试次数
 
 Retrieves the number of attempts a user currently has tried. Checks suspension time to see if login attempts can be reset. This may happen if the suspension time was (for example) 10 minutes however the last login was 15 minutes ago, attempts will be reset to 0.
 
