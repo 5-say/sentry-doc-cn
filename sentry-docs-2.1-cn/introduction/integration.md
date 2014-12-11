@@ -1,7 +1,7 @@
 # Installation // 安装
 
 The best and easiest way to install Sentry is with [Composer](http://getcomposer.org/)  
-sentry 最好且最简单的安装方式是使用 [Composer](http://getcomposer.org/)
+sentry 最好且最简单的安装方式是使用 [Composer](http://getcomposer.org/)。
 
 ## Preparation // 准备
 
@@ -13,12 +13,12 @@ Open your composer.json file and add the following to the require array:
 ```
 
 > **Note:** Make sure that after the required changes your composer.json file is valid by running composer validate.  
-> **Note** 通过composer validate命令进行验证，以确保你对composer.json文件的更改是合法的。
+> **Note** 通过 composer validate 命令进行验证，以确保你对 composer.json 文件的更改是合法的。
 
 ## Install the dependencies // 安装依赖包
 
 Run Composer to install or update the new requirement.  
-运行Composer来安装或更新这些新的必要组件。
+运行 Composer 来安装或更新这些新的必要组件。
 
 	php composer install
 
@@ -27,12 +27,12 @@ or // 或者
 	php composer update
 
 Now you are able to require the vendor/autoload.php file to autoload the package.  
-现在你可以包含vendor/autoload.php文件来自动加载这个资源包了
+现在你可以包含 vendor/autoload.php 文件来自动加载这个资源包了。
 
 # Integration // 综合
 
 > **Note:** The database schema is located under `vendor/cartalyst/sentry/schema/mysql.sql`  
-> **Note:** 数据库架构位于 `vendor/cartalyst/sentry/schema/mysql.sql` 文件中
+> **Note:** 数据库架构位于 `vendor/cartalyst/sentry/schema/mysql.sql` 文件中。
 
 ## Laravel 4
 
