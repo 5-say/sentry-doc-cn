@@ -1,32 +1,32 @@
 # Installation // 安装
 
-The best and easiest way to install Sentry is with [Composer](http://getcomposer.org/) 
-sentry最容易而且最好的安装方式是使用[Composer](http://getcomposer.org/)
+The best and easiest way to install Sentry is with [Composer](http://getcomposer.org/)  
+sentry 最好且最简单的安装方式是使用 [Composer](http://getcomposer.org/)
 
 ## Preparation // 准备
 
-Open your composer.json file and add the following to the require array: 
-打开composer.json文件，添加下面的代码到require数组
+Open your composer.json file and add the following to the require array:  
+打开 composer.json 文件，添加下面的代码到 require 数组：
 
 ```php
 "cartalyst/sentry": "2.1.*"
 ```
 
-> **Note:** Make sure that after the required changes your composer.json file is valid by running composer validate.
+> **Note:** Make sure that after the required changes your composer.json file is valid by running composer validate.  
 > **Note** 通过composer validate命令进行验证，以确保你对composer.json文件的更改是合法的。
 
 ## Install the dependencies // 安装依赖包
 
-Run Composer to install or update the new requirement. 
+Run Composer to install or update the new requirement.  
 运行Composer来安装或更新这些新的必要组件。
 
 	php composer install
 
-or //或者
+or // 或者
 
 	php composer update
 
-Now you are able to require the vendor/autoload.php file to autoload the package. 
+Now you are able to require the vendor/autoload.php file to autoload the package.  
 现在你可以包含vendor/autoload.php文件来自动加载这个资源包了
 
 # Integration // 综合
