@@ -14,9 +14,13 @@ For [cartalyst/sentry](https://github.com/cartalyst/sentry).
   - [x] [用户](/sentry-docs-2.1-cn/usage/users.md)
   - [x] [限制](/sentry-docs-2.1-cn/usage/throttling.md)
 
+---
 
+### 推荐阅读
 
-
+- [yccphp/Sentry-Manual-Chinese-Version](https://github.com/yccphp/Sentry-Manual-Chinese-Version)
+    - 袁超 先生的 laravel Sentry 中文教程。
+    - [在线阅读地址](http://yccphp.gitbooks.io/sentry-manual-chinese-version/content/)
 
 
 
